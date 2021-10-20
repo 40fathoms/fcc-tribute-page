@@ -1,0 +1,219 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #bbdbff;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #000;
+}
+
+body.active {
+  background-color: #002855;
+  color: #fff;
+}
+
+main {
+  margin: 1rem;
+  background: linear-gradient(-175deg, rgba(187, 219, 255, 0.9), rgba(0, 40, 85, 0.4)), url("../images/background1.jpg") center;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(auto, auto);
+      grid-template-areas: ". . title title title . ." ". image image image image image ." "info info info info info info info" ". . link link link . .";
+}
+
+main.active {
+  background: linear-gradient(-175deg, rgba(0, 40, 85, 0.9), rgba(187, 219, 255, 0.5)), url("../images/background2.jpg") center;
+  background-size: cover;
+}
+
+main .nightTheme {
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  cursor: pointer;
+  width: 2%;
+}
+
+main .nightTheme .fa-moon {
+  display: none;
+}
+
+main .nightTheme.active .fa-sun {
+  display: none;
+}
+
+main .nightTheme.active .fa-moon {
+  display: block;
+}
+
+main #title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: title;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+main #title h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+main #title h3 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+main #img-div {
+  background-color: rgba(187, 219, 255, 0.8);
+  padding: 2.5rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-area: image;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 1rem;
+  max-width: 100%;
+}
+
+main #img-div #image {
+  max-width: 100%;
+  padding: 1rem;
+  position: relative;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  display: block;
+}
+
+main #img-div #img-caption {
+  text-align: center;
+  font-size: 2rem;
+}
+
+main #img-div.active {
+  background-color: rgba(0, 40, 85, 0.8);
+}
+
+main #tribute-info {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: info;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  background-color: rgba(187, 219, 255, 0.8);
+}
+
+main #tribute-info.active {
+  background-color: rgba(0, 40, 85, 0.8);
+}
+
+main #tribute-info h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+main #tribute-info li {
+  font-size: 2rem;
+  text-align: justify;
+  line-height: 1.75;
+}
+
+main #link {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: link;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: rgba(187, 219, 255, 0.8);
+}
+
+main #link.active {
+  background-color: rgba(0, 40, 85, 0.8);
+}
+
+main #link.active a {
+  color: #fff;
+}
+
+main #link a {
+  text-decoration: none;
+  color: #000;
+}
+
+main #link a:hover {
+  text-decoration: underline;
+}
+
+main .line {
+  margin: 3rem;
+  border: 1px #000 solid;
+}
+
+main .line.active {
+  border: 1px #fff solid;
+}
+
+main #quote {
+  font-size: 2rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 760px) {
+  main .nightTheme {
+    position: absolute;
+  }
+  main #img-div {
+    max-width: 100%;
+  }
+  main #tribute-info {
+    max-width: 95%;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  main #img-div {
+    max-width: 90%;
+  }
+  main #tribute-info {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  main #tribute-info {
+    max-width: 1000px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
