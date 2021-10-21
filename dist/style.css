@@ -1,0 +1,264 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #bbdbff;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #000;
+}
+
+body.active {
+  background-color: #002855;
+  color: #fff;
+}
+
+main {
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(auto, auto);
+      grid-template-areas: ". title title title title title ." "image image image image image image image" "info info info info info info info" ". link link link link link .";
+}
+
+main .nightTheme {
+  position: fixed;
+  left: 2vw;
+  top: 2vw;
+  cursor: pointer;
+  width: 2%;
+  z-index: 1;
+}
+
+main .nightTheme .fa-moon {
+  display: none;
+}
+
+main .nightTheme.active .fa-sun {
+  display: none;
+}
+
+main .nightTheme.active .fa-moon {
+  display: block;
+}
+
+main #title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-area: title;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+main #title h1 {
+  font-size: 4vw;
+  text-align: center;
+}
+
+main #title h3 {
+  font-size: 2.5vw;
+  text-align: center;
+}
+
+main #img-div {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: image;
+  background: linear-gradient(-175deg, rgba(187, 219, 255, 0.9), rgba(0, 40, 85, 0.4)), url("../images/background1.jpg") center;
+  background-size: cover;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 1vw;
+  background-color: rgba(187, 219, 255, 0.8);
+  padding: 1vw;
+  position: relative;
+  max-width: 100%;
+}
+
+main #img-div.active {
+  background: linear-gradient(-175deg, rgba(0, 40, 85, 0.9), rgba(187, 219, 255, 0.5)), url("../images/background2.jpg") center;
+  background-size: cover;
+}
+
+main #img-div #image {
+  padding-top: 3vw;
+  max-width: 100%;
+  margin: 0.5vw;
+  margin-left: 0.3vw;
+  text-align: center;
+  display: block;
+}
+
+main #img-div #img-caption {
+  text-align: center;
+  font-size: 1.5vw;
+  margin-bottom: 19vw;
+  background-color: rgba(187, 219, 255, 0.8);
+  padding: 1vw;
+  display: block;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+main #img-div #img-caption.active {
+  background-color: rgba(0, 40, 85, 0.8);
+}
+
+main #tribute-info {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: info;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 1vw;
+  margin-top: 2vw;
+  background-color: rgba(187, 219, 255, 0.8);
+  max-width: 60%;
+}
+
+main #tribute-info.active {
+  background-color: rgba(0, 40, 85, 0.8);
+}
+
+main #tribute-info h2 {
+  font-size: 3vw;
+  text-align: center;
+  padding: 1vw;
+  margin-bottom: 1vw;
+}
+
+main #tribute-info li {
+  font-size: 2vw;
+  text-align: justify;
+  line-height: 1.75;
+}
+
+main #link {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-area: link;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  font-size: 2vw;
+  text-align: center;
+  background-color: rgba(187, 219, 255, 0.8);
+}
+
+main #link.active {
+  background-color: rgba(0, 40, 85, 0.8);
+}
+
+main #link.active a {
+  color: #fff;
+}
+
+main #link a {
+  text-decoration: none;
+  color: #000;
+}
+
+main #link a:hover {
+  text-decoration: underline;
+}
+
+main .line {
+  margin: 3vw;
+  border: 0.01vw #000 solid;
+}
+
+main .line.active {
+  border: 1px #fff solid;
+}
+
+main #quote {
+  font-size: 2vw;
+  padding: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+@media screen and (max-width: 760px) {
+  main .nightTheme {
+    position: absolute;
+  }
+  main #title h1 {
+    font-size: 8vw;
+  }
+  main #title h3 {
+    font-size: 5vw;
+  }
+  main #img-div {
+    max-width: 100%;
+  }
+  main #img-div #image {
+    padding-left: 15vw;
+    padding-right: 15vw;
+    max-width: 100%;
+  }
+  main #img-div #img-caption {
+    font-size: 4vw;
+  }
+  main #tribute-info {
+    max-width: 80%;
+  }
+  main #tribute-info h2 {
+    font-size: 5.5vw;
+  }
+  main #tribute-info li {
+    font-size: 4.5vw;
+  }
+  main #quote {
+    font-size: 4.5vw;
+  }
+  main #link {
+    margin-top: 10vw;
+    font-size: 4.5vw;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  main #img-div {
+    max-width: 100%;
+  }
+  main #img-div #image {
+    padding-left: 15vw;
+    padding-right: 15vw;
+    max-width: 70vw;
+  }
+  main #tribute-info {
+    max-width: 50%;
+  }
+  main #tribute-info h2 {
+    font-size: 25px;
+    text-align: center;
+    padding: 1vw;
+    margin-bottom: 1vw;
+  }
+  main #tribute-info li {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.75;
+  }
+  main #quote {
+    font-size: 20px;
+  }
+  main #link {
+    font-size: 17px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
